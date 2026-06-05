@@ -1,0 +1,24 @@
+{
+  "name": "linear-github-integration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xileff/linear-github-integration.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Xileff/linear-github-integration/issues"
+  },
+  "homepage": "https://github.com/Xileff/linear-github-integration#readme",
+  "dependencies": {
+    "@linear/sdk": "^86.0.0"
+  }
+}

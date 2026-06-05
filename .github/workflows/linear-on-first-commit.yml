@@ -1,0 +1,26 @@
+name: Linear - First Commit
+
+on:
+  push:
+
+jobs:
+  move-to-on-develop:
+    runs-on: ubuntu-latest
+
+    if: github.ref_type == 'branch'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: npm ci
+
+      - name: Move issue to On Develop
+        env:
+          LINEAR_API_KEY: ${{ secrets.LINEAR_API_KEY }}
+          TARGET_STATE_ID: ${{ secrets.LINEAR_STATE_ON_DEVELOP_ID }}
+          BRANCH_NAME: ${{ github.ref_name }}
+        run: node scripts/linear/moveIssue.js

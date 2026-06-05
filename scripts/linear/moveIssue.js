@@ -10,8 +10,8 @@ async function main() {
     throw new Error("BRANCH_NAME is required");
   }
 
-  if (branchName === 'main') {
-    console.log("Ignoring main branch commits from linear checks");
+  if (branchName === "main") {
+    console.log("Ignoring main branch");
     return;
   }
 
@@ -24,16 +24,14 @@ async function main() {
   console.log(`Issue Key: ${issueKey}`);
 
   const issue = await getIssue(issueKey);
+
   const currentState = await issue.state;
-  
-  if (currentState.name !== "Todo") {
-    console.log("Issue already started");
-    return;
-  }
 
-  console.log(`Current State: ${issue.stateId}`);
+  console.log(
+    `Current State: ${currentState.name} (${currentState.id})`
+  );
 
-  if (issue.stateId === targetStateId) {
+  if (currentState.id === targetStateId) {
     console.log("Already in target state");
     return;
   }

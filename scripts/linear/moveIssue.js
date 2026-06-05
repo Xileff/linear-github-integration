@@ -10,6 +10,10 @@ async function main() {
     throw new Error("BRANCH_NAME is required");
   }
 
+  if (branchName === 'main') {
+    console.log("Ignoring main branch commits from linear checks");
+  }
+
   if (!targetStateId) {
     throw new Error("TARGET_STATE_ID is required");
   }

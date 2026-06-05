@@ -1,4 +1,4 @@
-const ISSUE_REGEX = /([A-Z]+-\d+)/;
+const ISSUE_REGEX = /([a-z]+-\d+)/i;
 
 function extractIssueKey(text) {
   const match = text.match(ISSUE_REGEX);

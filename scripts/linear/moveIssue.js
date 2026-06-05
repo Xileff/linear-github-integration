@@ -19,6 +19,8 @@ async function main() {
     throw new Error("TARGET_STATE_ID is required");
   }
 
+  console.log("branchName : ", branchName)
+
   const issueKey = extractIssueKey(branchName);
 
   console.log(`Issue Key: ${issueKey}`);

@@ -12,6 +12,7 @@ async function main() {
 
   if (branchName === 'main') {
     console.log("Ignoring main branch commits from linear checks");
+    return;
   }
 
   if (!targetStateId) {
